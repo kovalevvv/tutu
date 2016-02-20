@@ -1,0 +1,17 @@
+<% @coaches.each do |coach| %>
+  <tr>
+    <td><%= coach.id %></td>
+    <td><%= coach.coach_type %></td>
+    <% if coach.train.present? %>
+    <td><%= coach.train.number %></td>
+    <% else %>
+    <td>Не назначен поезду</td>
+    <% end %>
+    <td><%= coach.seats_all_up %></td>
+    <td><%= coach.seats_all_down %></td>
+    <td><%= coach.seats_up %></td>
+    <td><%= coach.seats_down %></td>
+    <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
+    <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

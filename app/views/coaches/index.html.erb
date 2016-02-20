@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Все вагоны</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Тип</th>
+      <th>Поезд</th>
+      <th>Всего мест сверху</th>
+      <th>Всего мест снизу</th>
+      <th>Занято мест сверху</th>
+      <th>Занято мест снизу</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render 'coaches' %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый вагон создать', new_coach_path %>

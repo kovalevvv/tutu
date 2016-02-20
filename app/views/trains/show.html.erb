@@ -5,9 +5,24 @@
   <%= @train.number %>
 </p>
 <p>
-  <strong>Станция:</strong>
-  
+  <strong>Маршрут:</strong>
+  <% if @train.route.present? %>
+  <%= link_to @train.route.title, @train.route %>
+  <% else %>
+    Маршрут не назначен
+  <% end %>
 </p>
-
+<p>
+  <strong>Количество вагонов:</strong><br />
+  Купе: <%= @train.count_coaches "Купе" %>
+  Плацкарт: <%= @train.count_coaches "Плацкарт" %>
+</p>
+<p>
+  <strong>Количество мест:</strong><br />
+  Купейных верхних: <%= @train.count_seats "Купе", :seats_all_up %>, 
+  нижних: <%= @train.count_seats "Купе", :seats_all_down %><br />
+  Плацкартных верхних: <%= @train.count_seats "Плацкарт", :seats_all_up %>,
+  нижних: <%= @train.count_seats "Плацкарт", :seats_all_down %><br /> 
+</p>
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
