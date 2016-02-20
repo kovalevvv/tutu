@@ -4,11 +4,11 @@ class Train < ActiveRecord::Base
   has_many :coaches
 
 
-  def count_coaches coach_type
+  def count_coaches(coach_type)
   	self.coaches.where(coach_type: coach_type).count
   end
 
-  def count_seats coach_type, seat_type
+  def count_seats(coach_type, seat_type)
   	self.coaches.where(coach_type: coach_type).sum(seat_type)
   end
 

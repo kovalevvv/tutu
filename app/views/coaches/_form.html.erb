@@ -1,6 +1,6 @@
 <%= form_for(@coach) do |f| %>
 
-<% render 'common/error', object: @coach %>
+<%= render 'common/error', object: @coach %>
 
   <div class="field">
     <%= f.label :coach_type, "Тип вагона:" %><br>
