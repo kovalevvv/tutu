@@ -1,0 +1,24 @@
+<%= form_for(@coach) do |f| %>
+
+<% render 'common/error', object: @coach %>
+
+  <div class="field">
+    <%= f.label :coach_type, "Тип вагона:" %><br>
+    <%= f.select :coach_type, options_for_select([["Купе"],["Плацкарт"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :train_id, "Поезд:" %><br>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+  <div class="field">
+    <%= f.label :seats_all_up, "Всего мест сверху:" %><br>
+    <%= f.text_field :seats_all_up %>
+  </div>
+  <div class="field">
+    <%= f.label :seats_all_down, "Всего мест снизу:" %><br>
+    <%= f.text_field :seats_all_down %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

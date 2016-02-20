@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205121747) do
+ActiveRecord::Schema.define(version: 20160220075140) do
+
+  create_table "coaches", force: :cascade do |t|
+    t.string  "coach_type"
+    t.integer "seats_all_up"
+    t.integer "seats_all_down"
+    t.integer "seats_up"
+    t.integer "seats_down"
+    t.integer "train_id"
+  end
 
   create_table "railway_stations", force: :cascade do |t|
     t.string   "title"
