@@ -1,0 +1,24 @@
+<%= form_for(@ticket) do |f| %>
+
+<%= render 'common/error', object: @ticket %>
+
+  <div class="field">
+    <%= f.label :train_id, "Поезд:" %><br>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+  <div class="field">
+    <%= f.label :start_railway_station_id, "Начальная станция:" %><br>
+    <%= f.collection_select :start_railway_station_id, RailwayStation.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_railway_station_id, "Начальная станция:" %><br>
+    <%= f.collection_select :stop_railway_station_id, RailwayStation.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :fio, "ФИО пассажира:" %><br>
+    <%= f.text_field :fio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
