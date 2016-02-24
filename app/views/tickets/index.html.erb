@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Все проданные билеты</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>На поезд</th>
+      <th>Начальная станция</th>
+      <th>Конечная станция</th>
+      <th>ФИО</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render 'tickets' %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Продать билет', new_ticket_path %>

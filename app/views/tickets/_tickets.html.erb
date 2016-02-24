@@ -1,0 +1,10 @@
+<% @tickets.each do |ticket| %>
+  <tr>
+    <td><%= ticket.train.number %></td>
+    <td><%= ticket.start_railway_station.title %></td>
+    <td><%= ticket.stop_railway_station.title %></td>
+    <td><%= ticket.fio %></td>
+    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+    <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220075140) do
+ActiveRecord::Schema.define(version: 20160224115917) do
 
   create_table "coaches", force: :cascade do |t|
     t.string  "coach_type"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160220075140) do
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "fio"
   end
 
   create_table "trains", force: :cascade do |t|
